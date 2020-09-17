@@ -17,7 +17,7 @@ this is a wrapper for [node-mysql](https://github.com/felixge/node-mysql) that w
 ### init
 
 ```javascript
-var Client = require("mysql-pro");
+var Client = require("mysql-promise-transcation");
 var client = new Client({
   mysql: {
     host: "127.0.0.1",
