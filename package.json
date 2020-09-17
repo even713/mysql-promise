@@ -1,5 +1,5 @@
 {
-  "name": "mysql-trascation",
+  "name": "mysql-promise-transcation",
   "version": "1.0.0",
   "description": "drive mysql with promise for trascation",
   "keywords": [

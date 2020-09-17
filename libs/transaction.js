@@ -28,7 +28,7 @@ class Transaction {
           return _this._connection.rollback(function () {
             if (_this._connection) {
               _this._connection.end();
-              console.log("手动释放连接");
+              // console.log("手动释放连接");
             }
             reject(error);
           });
@@ -47,7 +47,7 @@ class Transaction {
           return _this._connection.rollback(function () {
             if (_this._connection) {
               _this._connection.end();
-              console.log("手动释放连接");
+              // console.log("手动释放连接");
             }
             reject(error);
           });
@@ -55,7 +55,7 @@ class Transaction {
 
         if (_this._connection) {
           _this._connection.end();
-          console.log("手动释放连接");
+          // console.log("手动释放连接");
         }
         return resolve();
       });
