@@ -1,7 +1,7 @@
 {
-  "name": "mysql-pro",
-  "version": "1.0.1",
-  "description": "drive mysql with promise",
+  "name": "mysql-trascation",
+  "version": "1.0.0",
+  "description": "drive mysql with promise for trascation",
   "keywords": [
     "mysql",
     "promise",
@@ -13,17 +13,17 @@
     "es2015",
     "transaction"
   ],
-  "homepage": "https://github.com/shhhplus",
+  "homepage": "https://github.com/even713",
   "main": "index.js",
   "author": {
-    "name": "shhhplus"
+    "name": "even713"
   },
   "bugs": {
-    "url": "https://github.com/shhhplus/mysql-promise/issues"
+    "url": "https://github.com/even713/mysql-promise/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shhhplus/mysql-promise.git"
+    "url": "https://github.com/even713/mysql-promise"
   },
   "scripts": {
     "test": "node ./test/run.js",

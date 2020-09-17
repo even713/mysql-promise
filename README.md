@@ -2,49 +2,69 @@
 [![Coverage Status](https://coveralls.io/repos/github/shhhplus/mysql-promise/badge.svg?branch=master)](https://coveralls.io/github/shhhplus/mysql-promise?branch=master)
 
 ## Introduction
+
+this is a fork from mysql-pro
+and refine it by release connection when transactio done.
+
 this is a wrapper for [node-mysql](https://github.com/felixge/node-mysql) that wraps function calls with promise.you can use generator/yield or async/await with it.
 
 ## Install
+
 `npm install mysql-pro`
 
 ## How to use
+
 ### init
+
 ```javascript
 var Client = require("mysql-pro");
 var client = new Client({
-    mysql: {
-        host: "127.0.0.1",
-        port: 3306,
-        database: "db",
-        user: "root",
-        password: "123456"
-    }
+  mysql: {
+    host: "127.0.0.1",
+    port: 3306,
+    database: "db",
+    user: "root",
+    password: "123456",
+  },
 });
 ```
+
 ### basic query
+
 ```javascript
-client.query("select * from user where id = ?;", [1]).then(function(result) {
+client.query("select * from user where id = ?;", [1]).then(
+  function (result) {
     // use result
-}, function(error){
+  },
+  function (error) {
     // error
-});
+  }
+);
 ```
 
 ### transaction
+
 ```javascript
 // start
-client.startTransaction(function(result) {
+client.startTransaction(
+  function (result) {
     // execute sql
-    client.executeTransaction("select * from user", []).then(function(result){
+    client.executeTransaction("select * from user", []).then(
+      function (result) {
         // stop
         client.stopTransaction();
-    }, function(error){});
-}, function(error){
+      },
+      function (error) {}
+    );
+  },
+  function (error) {
     // error
-});
+  }
+);
 ```
 
-###  generator/yield
+### generator/yield
+
 ```javascript
 function*() {
     yield client.startTransaction();
@@ -55,6 +75,7 @@ function*() {
 ```
 
 ### async/await
+
 ```javascript
 async function() {
     await client.startTransaction();
